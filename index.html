@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peruzzi - Escritório Contábil e Despachante</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --accent-color: #2980b9;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            padding: 10px 25px;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+        }
+        
+        .contact-info {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--secondary-color);
+            transform: scale(1.2);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .highlight-box {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin-top: 30px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h3><i class="fas fa-balance-scale me-2"></i>Peruzzi</h3>
+                <small class="d-block">Escritório Contábil e Despachante</small>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção Hero -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Soluções contábeis e documentais completas</h1>
+            <p class="lead mb-5">Há mais de 9 anos oferecendo serviços de contabilidade e despachante com excelência</p>
+            <a href="#contato" class="btn btn-primary btn-lg px-4 me-2"><i class="fas fa-phone-alt me-2"></i>Fale Conosco</a>
+            <a href="#servicos" class="btn btn-outline-light btn-lg px-4"><i class="fas fa-list me-2"></i>Nossos Serviços</a>
+        </div>
+    </section>
+
+    <!-- Seção Destaque -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="highlight-box text-center">
+                <div class="row align-items-center">
+                    <div class="col-md-9">
+                        <h4 class="mb-0">Precisa de ajuda com documentos ou contabilidade? Fale com nossos especialistas!</h4>
+                    </div>
+                    <div class="col-md-3 text-md-end mt-3 mt-md-0">
+                        <a href="tel:1838710599" class="btn btn-light btn-lg"><i class="fas fa-phone me-2"></i>(18) 3871-0599</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="servicos" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Nossos Serviços</h2>
+                <p class="lead text-muted">Soluções completas para sua empresa e veículos</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Serviços Contábeis -->
+                <div class="col-md-6">
+                    <div class="card service-card h-100 p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h4 class="text-center">Serviços Contábeis</h4>
+                        <ul class="mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Abertura, alteração e baixa de empresas</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Escrituração fiscal e contábil</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Declarações de imposto de renda (PJ e PF)</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Certidões negativas</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Recuperação de créditos fiscais</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Assessoria trabalhista</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Serviços de Despachante -->
+                <div class="col-md-6">
+                    <div class="card service-card h-100 p-4">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h4 class="text-center">Serviços de Despachante</h4>
+                        <ul class="mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Licenciamento anual de veículos</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Transferência de propriedade</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Emissão de CRLV-e e segunda via de documentos</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Alteração de características do veículo</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Processos de multas e infrações</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Despachos em geral</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-4">Sobre o Escritório Peruzzi</h2>
+                    <p class="lead">Excelência em serviços contábeis e despachante desde 2014.</p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h5>2014</h5>
+                            <p>Fundado em 03 de novembro de 2014, o Escritório Peruzzi iniciou suas atividades com foco em serviços contábeis para pequenas empresas.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>2016</h5>
+                            <p>Expansão dos serviços para incluir despachante documental, atendendo à demanda da região.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>Hoje</h5>
+                            <p>Mais de 9 anos de experiência, centenas de clientes atendidos e uma equipe especializada pronta para ajudar.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-bullseye fa-2x text-primary me-3"></i>
+                            <div>
+                                <h5 class="mb-0">Missão</h5>
+                                <p class="mb-0">Oferecer soluções contábeis e documentais com qualidade, agilidade e transparência.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-eye fa-2x text-primary me-3"></i>
+                            <div>
+                                <h5 class="mb-0">Visão</h5>
+                                <p class="mb-0">Ser referência em serviços contábeis e de despachante na região de Panorama/SP.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3" alt="Escritório Peruzzi" class="img-fluid rounded shadow-lg">
+                    <div class="mt-4 text-center">
+                        <h4>Marcelo Henrique de Abreu Peruzzi</h4>
+                        <p class="text-muted">Proprietário</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Entre em Contato</h2>
+                <p class="lead text-muted">Estamos à disposição para atender suas necessidades</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="contact-info h-100">
+                        <h4 class="fw-bold mb-4">Informações de Contato</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                                <strong>Endereço:</strong> Rua Manoel Fernandes da Cunha, 1712 - Centro, Panorama/SP - 17980-000
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-phone-alt me-2 text-primary"></i>
+                                <strong>Telefone:</strong> (18) 3871-0599
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-envelope me-2 text-primary"></i>
+                                <strong>E-mail:</strong> peruzziassessoria@hotmail.com
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-clock me-2 text-primary"></i>
+                                <strong>Horário de Atendimento:</strong> Segunda a Sexta, das 8h às 18h
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-file-alt me-2 text-primary"></i>
+                                <strong>CNPJ:</strong> 21.333.516/0001-28
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-4">
+                            <h5 class="fw-bold mb-3">Redes Sociais</h5>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/551838710599" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nome" class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" id="nome" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefone" class="form-label">Telefone</label>
+                                <input type="tel" class="form-control" id="telefone" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="col-12">
+                                <label for="servico" class="form-label">Serviço de Interesse</label>
+                                <select class="form-select" id="servico">
+                                    <option selected>Selecione um serviço...</option>
+                                    <option>Serviços Contábeis</option>
+                                    <option>Despachante Documental</option>
+                                    <option>Abertura de Empresa</option>
+                                    <option>Declaração de Imposto de Renda</option>
+                                    <option>Licenciamento de Veículo</option>
+                                    <option>Outros</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="mensagem" class="form-label">Mensagem</label>
+                                <textarea class="form-control" id="mensagem" rows="4"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i>Enviar Mensagem</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="mt-4">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.9876543210003!2d-51.85678968453125!3d-21.3564567865937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDIxJzIzLjIiUyA1McKwNTEnMTkuOSJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" width="100%" height="250" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5><i class="fas fa-balance-scale me-2"></i>Escritório Contábil e Despachante Peruzzi</h5>
+                    <p class="mb-0">CNPJ: 21.333.516/0001-28</p>
+                    <p>Marcelo Henrique de Abreu Peruzzi</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">© 2023 Peruzzi. Todos os direitos reservados.</p>
+                    <p class="mb-0">Panorama/SP - Desde 2014</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão do WhatsApp -->
+    <a href="https://wa.me/551838710599" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
